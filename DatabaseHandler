@@ -1,4 +1,4 @@
-Enter file contents herepackage packDemo;
+package packDemo;
 
 import java.awt.Dimension;
 import java.awt.Font;
@@ -1189,7 +1189,7 @@ public void modify_MGHRecords()
 		
 		int patientID = 0;
 	
-// Program should display a particular record in a pop up window. 
+
 
 	String[] fields = new String[8];
 	fields[0] = "Last Name";
@@ -1215,8 +1215,6 @@ public void modify_MGHRecords()
 	String insCo = null;
 	int optionSelected = 1;
 	
-	// JOptionPane should ask which fields the user would like to modify and allow multiple selections. 
-	// Based on user input create a JFrame. 
 	
 
 	JFrame jFrame = new JFrame();
@@ -1303,7 +1301,7 @@ try
 	
 	do
 			{	
-				// User inputs patientID to determine which record to modify. 
+				// User inputs patient id to determine which record to modify. 
 				
 				System.out.println("To modify a MGH record, please enter patientID in numeric form.");
 				Scanner scanner_inputID = new Scanner(System.in); 
@@ -1331,7 +1329,7 @@ try
 				
 				String sql1 = "SELECT * FROM (SELECT mgh1.visit_number, mgh1.patient_id, mgh1.visit_date, mgh1.reason, mgh1.copay_amount_paid, mgh1.time_stamp, mgh2.last_name, mgh2.first_name, mgh2.gender, mgh2.SSN, mgh2.dob, mgh2.insurance_co FROM patient_history_mgh mgh1, patients_mgh mgh2 WHERE mgh1.patient_ID = mgh2.patient_ID)a WHERE patient_id = ?; ";
 				PreparedStatement preparedStmt1 = connect.prepareStatement(sql1);
-// below patientID is the user inputted Id. 		
+		
 				preparedStmt1.setInt(1, patientID);
 				ResultSet rs1 = preparedStmt1.executeQuery();
 				if(rs1.next())
@@ -1388,7 +1386,7 @@ try
 				{
 					public void actionPerformed(ActionEvent e)
 					{
-						// jButton1ExecuteAction(e);
+						
 						int[] selectedIndexes = jlist.getSelectedIndices();
 						List<Integer> selectedIndexesList = new ArrayList<Integer>();
 						for(int i = 0; i < selectedIndexes.length; i++)
@@ -1575,13 +1573,10 @@ try
 			
 				
 	
-			//	JOptionPane.showMessageDialog(null, jlist, "Please select the fields that you'd like to modify", JOptionPane.PLAIN_MESSAGE);
-			
-			 // end of while statement b
+		
 		
 	
-	// add code here to repeat loop	
-		
+			
 		
 		}// end of the try block
 
@@ -1591,9 +1586,9 @@ try
 			e.printStackTrace();
 		}
 
-	} // end of while loop
+	} 
 }
-	 // end of method declaration. 		 
+		 
 
 public void modify_WinchesterRecords()
 {
@@ -1631,8 +1626,8 @@ public void modify_WinchesterRecords()
 	String insCo = null;
 	int optionSelected = 1; 
 	
-	// JOptionPane should ask which fields the user would like to modify and allow multiple selections. 
-	// Based on user input create a JFrame. 
+	 
+	
 	
 	JFrame jFrame = new JFrame();
 	JPanel jPanel = new JPanel();
@@ -1718,7 +1713,7 @@ try
 	
 	do
 			{	
-				// User inputs patientID which determines which record gets modified.  
+				// User inputs patient id which determines which record gets modified.  
 				
 				System.out.println("To modify a Winchester Hospital record, please enter patientID in numeric form.");
 				Scanner scanner_inputID = new Scanner(System.in); 
@@ -1767,7 +1762,7 @@ try
 					tableValues[5] = date1.toString();
 					tableValues[6] = reason;
 					tableValues[7] = amt.toString();		
-					// String below encompasses all the values retrieved from the ResultSet object.
+					
 					String displayMessage1 = "Last Name: " + lastName + ", First Name: " + firstName + ", Gender: " + gender;
 					JTextPane jTextPane = new JTextPane();
 					jTextPane.setText(displayMessage1);
@@ -2013,7 +2008,7 @@ public void modify_LaheyRecords()
 		
 		int patientID = 0;
 	
-	// Program should display a particular record in a pop up window. 
+	 
 	String[] fields = new String[8];
 	fields[0] = "Last Name";
 	fields[1] = "First Name";
@@ -2038,8 +2033,8 @@ public void modify_LaheyRecords()
 	String insCo = null;
 	int optionSelected = 1; 
 	
-	// JOptionPane should ask which fields the user would like to modify and allow multiple selections. 
-	// Based on user input create a JFrame. 
+	
+	
 	
 	JFrame jFrame = new JFrame();
 	JPanel jPanel = new JPanel();
@@ -2125,7 +2120,7 @@ try
 	
 	do
 			{	
-				// User inputs patientID which determines which record gets modified.  
+				// User inputs patient id which determines which record gets modified.  
 				
 				System.out.println("To modify a Lahey Hospital record, please enter patientID in numeric form.");
 				Scanner scanner_inputID = new Scanner(System.in); 
@@ -2410,5 +2405,4 @@ try
 
 
 } // end of class declaration. 		 
-
 		
