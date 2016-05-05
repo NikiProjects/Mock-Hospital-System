@@ -58,7 +58,7 @@ public void connect()
 	
 	try {
 		// Statement below returns an object of type Connection. 
-		connect = DriverManager.getConnection("jdbc:mysql://localhost:3306/database1", "User1", "User1Access");
+		connect = DriverManager.getConnection("jdbc:mysql://localhost:3306/database1", "User1", "*****");
 	} 
 	catch (SQLException e) 
 	{
@@ -1177,6 +1177,10 @@ catch(SQLException e)
 
 	
 }
+// My code includes methods for modifying records in the database. A graphical user interface is presented to the user in the form 
+// of a list asking user to select which fields need to be modified. A press of a button allows submission of the user selections for 
+//processing. Another GUI allows user to make changes within text fields. The Save button included in the GUI allows updates 
+// to be made in the database. 
 
 public void modify_MGHRecords()
 {
